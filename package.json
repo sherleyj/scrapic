@@ -14,20 +14,17 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sherleyj/scrapic.git"
+    "url": "git@heroku.com:scrapiic.git"
   },
-  "keywords": [
-    "scrape"
-  ],
   "author": "Sherley Gionfriddo",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/sherleyj/scrapic/issues"
   },
-  "homepage": "https://github.com/sherleyj/scrapic#readme",
+  "homepage": "https://github.com/sherleyj/scrapic#readme"
 }
