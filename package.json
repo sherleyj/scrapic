@@ -1,0 +1,29 @@
+{
+  "name": "scrapic",
+  "version": "1.0.0",
+  "description": "scrapes webpages for its pictures!",
+  "main": "scrape_imgs.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sherleyj/scrapic.git"
+  },
+  "keywords": [
+    "scrape",
+    "images"
+  ],
+  "author": "Sherley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sherleyj/scrapic/issues"
+  },
+  "homepage": "https://github.com/sherleyj/scrapic#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "scrape_imgs": "^1.0"
+  }
+}

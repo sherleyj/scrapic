@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Scrapic: Scrape pictures from any dynamic website!</title>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div class="input-container">
+      <h1>Scrape images from any website.</h1>
+      <p></p>
+      <fieldset>
+        <form action="/" method="post">
+          <input name="url_to_parse" type="text" class="form-control" placeholder="Enter a URL here." required>
+          <input type="submit" class="btn btn-default btn-block" value="Get Images">
+        </form>
+      </fieldset>
+    </div>
+    
+    <div class="flex-container">
+    <% if(error !== null){ %>
+      <p><%= error %></p>
+    <% } %>
+    <% if(urls !== null){ %>
+      <% for(var i=0; i<urls.length; i++) { %>
+        <div class ="flex-item">
+          <img src='<%=urls[i]%>'>
+        </div>
+      <% } %>
+    <% } %>
+    </div>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
