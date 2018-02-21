@@ -13,7 +13,7 @@ app.get('/', function (req, res) {
 
 async function scrape_imgs(pageUrl) {
     const browser = await puppeteer.launch({
-        args: ['--no-sandbox', '--disable-setuid-sandbox']
+        args: ['--no-sandbox', '--disable-setuid-sandbox'] // https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md
     });
     const page = await browser.newPage();
     try {
