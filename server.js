@@ -44,6 +44,7 @@ app.post('/', async function (req, res) {
 
     if(urls != null){
     	res.render('index', {error: null, urls: urls})
+    	// document.getElementById("loader").style.display = "none";
     } else {
     	res.render('index', {error: 'Error, Please try again. You probaly did not enter a valid URL.', urls: null})
     }
