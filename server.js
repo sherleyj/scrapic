@@ -12,8 +12,10 @@ app.get('/', function (req, res) {
 })
 
 async function scrape_imgs(pageUrl) {
+	// Needed to add no sandbox in order to deploy to Heroku.
+	// https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md
     const browser = await puppeteer.launch({
-        args: ['--no-sandbox', '--disable-setuid-sandbox'] // https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md
+        args: ['--no-sandbox', '--disable-setuid-sandbox'] 
     });
     const page = await browser.newPage();
     try {
@@ -44,7 +46,6 @@ app.post('/', async function (req, res) {
 
     if(urls != null){
     	res.render('index', {error: null, urls: urls})
-    	// document.getElementById("loader").style.display = "none";
     } else {
     	res.render('index', {error: 'Error, Please try again. You probaly did not enter a valid URL.', urls: null})
     }

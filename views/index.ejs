@@ -9,9 +9,9 @@
   </head>
   <body onload="loader_deactivate()">
     <div id="loader"></div>
-    <div class="input-container">
+    <div class="container input-container">
       <h1>Scrape images from any website.</h1>
-      <p></p>
+      <br/ >
       <fieldset>
         <form action="/" method="post">
           <input name="url_to_parse" type="text" class="form-control" placeholder="Enter a URL here." required>
@@ -34,7 +34,7 @@
       <% } %>
     <% } %>
     </div>
-    <script src="js/bootstrap.min.js"></script>
+
     <script>
       function loader_deactivate() {
         document.getElementById("loader").style.display = "none";
