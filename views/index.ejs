@@ -26,11 +26,11 @@
     <% } %>
     <% if(urls !== null){ %>
       <% for(var i=0; i<urls.length; i++) { %>
+      <a href='<%=urls[i]%>'>
         <div class ="flex-item">
-          <a href='<%=urls[i]%>'>
           <img src='<%=urls[i]%>'>
-          </a>
         </div>
+      </a>
       <% } %>
     <% } %>
     </div>

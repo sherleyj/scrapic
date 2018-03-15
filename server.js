@@ -22,10 +22,20 @@ async function scrape_imgs(pageUrl) {
 	    await page.goto(pageUrl); // the website we want to scrape for images
 
 	    const result = await page.evaluate(() => {
+	    	var domain = window.location.hostname;
+	    	console.log(domain);
 	        const images = document.querySelectorAll("img"); // Select all Images
 	        const urls = [];
 	        for (var image of images){
-	            urls.push(image.getAttribute("src"));
+	        	var image_url = image.getAttribute("src");
+	        	if (image_url.slice(0, 6) === "https:" ||
+	        		image_url.slice(0, 4) === "www." ||
+	        		image_url.includes(domain.slice(4))) {		// if the url starts with images.example.com. Checks that the url contains "example.com"
+	            	urls.push(image_url);
+	            }
+	            else {
+	            	urls.push(domain + image_url);
+	            }
 	        }
 	        return urls; // Return array of image urls
 	    });
@@ -47,7 +57,7 @@ app.post('/', async function (req, res) {
     if(urls != null){
     	res.render('index', {error: null, urls: urls})
     } else {
-    	res.render('index', {error: 'Error, Please try again. You probaly did not enter a valid URL.', urls: null})
+    	res.render('index', {error: 'Error, Please try again. You probably did not enter a valid URL.', urls: null})
     }
 })
 
