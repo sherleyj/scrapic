@@ -18,6 +18,9 @@ async function scrape_imgs(pageUrl) {
         args: ['--no-sandbox', '--disable-setuid-sandbox'] 
     });
     const page = await browser.newPage();
+    if (pageUrl.slice(0, 6) !== "https:" ||){
+    	pageUrl += "https://";
+    }
     try {
 	    await page.goto(pageUrl); // the website we want to scrape for images
 
