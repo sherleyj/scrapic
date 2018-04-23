@@ -18,7 +18,7 @@ async function scrape_imgs(pageUrl) {
         args: ['--no-sandbox', '--disable-setuid-sandbox'] 
     });
     const page = await browser.newPage();
-    if (pageUrl.slice(0, 6) !== "https:"){
+    if (pageUrl.slice(0, 8) !== "https:") {
     	pageUrl += "https://";
     }
     try {
