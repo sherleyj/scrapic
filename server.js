@@ -19,8 +19,10 @@ async function scrape_imgs(pageUrl) {
     });
     const page = await browser.newPage();
     if (pageUrl.slice(0, 8) !== "https://") {
-    	pageUrl += "https://";
+    	pageUrl = "https://" + pageUrl;
+    	// pageUrl += "https://";
     }
+    console.log(pageUrl);
     try {
 	    await page.goto(pageUrl); // the website we want to scrape for images
 
